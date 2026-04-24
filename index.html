@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ed Chandler — Advisor · Speaker · Leader</title>
-  <meta name="description" content="Ed Chandler — Naval aviator, TOPGUN graduate, corporate board director, and leadership advisor. Speaker on decision-making, organisational resilience, and high-performance culture." />
+  <title>Ed Chandler — Speaking</title>
+  <meta name="description" content="Ed Chandler — TOPGUN-trained Naval Aviator, 32 years in uniform. Talks and executive sessions on how institutions build the people who lead under pressure." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://edchandler.net/" />
+  <meta property="og:title" content="Ed Chandler — Speaking" />
+  <meta property="og:description" content="Leadership lessons from 32 years flying, fighting, and building the people who run the Navy's toughest jobs." />
+  <meta property="og:image" content="https://edchandler.net/images/ed-naples-xo.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ed Chandler — Speaking" />
+  <meta name="twitter:description" content="Leadership lessons from 32 years flying, fighting, and building the people who run the Navy's toughest jobs." />
+  <meta name="twitter:image" content="https://edchandler.net/images/ed-naples-xo.jpg" />
+
+  <link rel="canonical" href="https://edchandler.net/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -84,12 +100,13 @@
 
     .nav-links a:hover { color: var(--gold); }
 
+    /* ---------- Hero ---------- */
     #hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 0 4rem;
+      padding: 8rem 4rem 4rem;
       overflow: hidden;
     }
 
@@ -101,24 +118,24 @@
         linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
       background-size: 80px 80px;
       mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
       opacity: 0.4;
     }
 
-    .hero-glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      right: -100px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: radial-gradient(circle, rgba(200,169,90,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
+      max-width: 620px;
       animation: fadeUp 1s ease both;
     }
 
@@ -148,11 +165,11 @@
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      font-size: clamp(3rem, 5.5vw, 5.25rem);
       font-weight: 600;
-      line-height: 1.02;
+      line-height: 1.05;
       color: var(--off-white);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.4s both;
     }
@@ -162,7 +179,7 @@
     .hero-sub {
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 540px;
       margin-bottom: 3rem;
       line-height: 1.8;
       opacity: 0;
@@ -175,6 +192,53 @@
       flex-wrap: wrap;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.8s both;
+    }
+
+    /* Hero image — the Naples XO shot */
+    .hero-image-wrap {
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--navy-mid);
+      border: 1px solid var(--rule);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    /* Subtle gold corner accents */
+    .hero-image-wrap::before,
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--gold);
+      z-index: 2;
+    }
+
+    .hero-image-wrap::before {
+      top: -8px; left: -8px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .hero-image-wrap::after {
+      bottom: -8px; right: -8px;
+      border-left: none;
+      border-top: none;
     }
 
     .btn-primary {
@@ -191,6 +255,8 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: background 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
@@ -213,6 +279,7 @@
 
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
+    /* ---------- Credentials strip ---------- */
     #credentials {
       position: relative;
       z-index: 1;
@@ -220,7 +287,7 @@
       border-bottom: 1px solid var(--rule);
       padding: 1.5rem 4rem;
       display: flex;
-      gap: 3rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
       align-items: center;
       background: rgba(10,22,40,0.6);
@@ -244,6 +311,7 @@
       flex-shrink: 0;
     }
 
+    /* ---------- Sections ---------- */
     section {
       position: relative;
       z-index: 1;
@@ -283,48 +351,63 @@
 
     h2 em { font-style: italic; color: var(--gold); }
 
-    #about {
+    /* ---------- Bio ---------- */
+    #bio {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .bio-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
       align-items: start;
     }
 
-    .about-text {
-      font-size: 1rem;
+    .bio-text {
+      font-size: 1.05rem;
       color: var(--text);
       line-height: 1.9;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .about-right { padding-top: 4rem; }
+    .bio-text:last-child { margin-bottom: 0; }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5px;
-      background: var(--rule);
+    .bio-headshot {
+      position: relative;
+      margin-top: 0.5rem;
+    }
+
+    .bio-headshot img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
       border: 1px solid var(--rule);
+      background: var(--navy-mid);
+      filter: saturate(0.95);
     }
 
-    .stat-block { background: var(--navy-mid); padding: 2rem; }
-
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.5rem;
+    .bio-headshot::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: -8px;
+      width: 30px; height: 30px;
+      border-top: 1px solid var(--gold);
+      border-left: 1px solid var(--gold);
     }
 
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .bio-headshot::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; right: -8px;
+      width: 30px; height: 30px;
+      border-bottom: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
     }
 
+    /* ---------- Speaking ---------- */
     #speaking { background: var(--navy-mid); }
 
     .speaking-grid {
@@ -353,7 +436,7 @@
 
     .topic-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: var(--off-white);
       line-height: 1.3;
@@ -361,7 +444,7 @@
     }
 
     .topic-desc {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.8;
     }
@@ -392,59 +475,79 @@
       font-style: normal;
     }
 
-    #advisory {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .advisory-list { list-style: none; margin-top: 2rem; }
-
-    .advisory-list li {
-      display: flex;
-      gap: 1rem;
-      padding: 1.25rem 0;
+    /* ---------- Stage photo (between speaking and contact) ---------- */
+    #stage-photo {
+      padding: 0;
+      background: var(--navy);
+      border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
-      font-size: 0.92rem;
-      color: var(--text);
     }
 
-    .advisory-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 0.05rem; }
-
-    .drift-callout {
+    .stage-photo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 21 / 9;
+      max-height: 520px;
+      overflow: hidden;
       background: var(--navy-mid);
-      border: 1px solid var(--rule);
-      padding: 2.5rem;
-      margin-top: 2rem;
     }
 
-    .drift-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
+    .stage-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
     }
 
-    .drift-expand {
-      font-size: 0.72rem;
+    .stage-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          rgba(200,169,90,0.03),
+          rgba(200,169,90,0.03) 10px,
+          transparent 10px,
+          transparent 20px
+        ),
+        var(--navy-mid);
+      color: var(--muted);
+      font-size: 0.75rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      text-align: center;
+      padding: 2rem;
     }
 
-    .drift-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .stage-photo-placeholder strong {
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+    }
 
+    .stage-photo-placeholder small {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+      text-transform: none;
+      max-width: 420px;
+      line-height: 1.6;
+    }
+
+    /* ---------- Contact ---------- */
     #contact { background: var(--navy-mid); text-align: center; }
     #contact h2 { margin-bottom: 1rem; }
 
     .contact-sub {
       font-size: 1rem;
       color: var(--muted);
-      max-width: 480px;
+      max-width: 520px;
       margin: 0 auto 3rem;
       line-height: 1.8;
     }
@@ -475,6 +578,7 @@
       outline: none;
       transition: border-color 0.2s;
       appearance: none;
+      -webkit-appearance: none;
     }
 
     .form-group input:focus,
@@ -505,6 +609,7 @@
     .contact-alt { margin-top: 2.5rem; font-size: 0.8rem; color: var(--muted); }
     .contact-alt a { color: var(--gold); text-decoration: none; }
 
+    /* ---------- Footer ---------- */
     footer {
       position: relative;
       z-index: 1;
@@ -538,17 +643,29 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; max-width: 620px; }
+      .hero-image-wrap { max-width: 440px; margin: 0 auto; width: 100%; }
+      .bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .bio-headshot { max-width: 240px; }
+    }
+
     @media (max-width: 900px) {
-      nav { padding: 1.25rem 2rem; }
-      .nav-links { display: none; }
-      #hero { padding: 8rem 2rem 4rem; }
-      #credentials { padding: 1.25rem 2rem; gap: 1.5rem; }
-      section { padding: 4rem 2rem; }
-      #about { grid-template-columns: 1fr; gap: 3rem; }
-      .about-right { padding-top: 0; }
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .nav-links a { font-size: 0.7rem; }
+      #hero { padding: 7rem 1.5rem 3rem; }
+      #credentials { padding: 1.25rem 1.5rem; gap: 1.25rem; }
+      section { padding: 4rem 1.5rem; }
       .speaking-grid { grid-template-columns: 1fr; }
-      #advisory { grid-template-columns: 1fr; gap: 3rem; }
-      footer { padding: 1.5rem 2rem; flex-direction: column; text-align: center; }
+      .stage-photo-frame { aspect-ratio: 4 / 3; }
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 2.5rem; }
+      .hero-sub { font-size: 1rem; }
+      .cred-item { font-size: 0.68rem; }
     }
   </style>
 </head>
@@ -557,117 +674,146 @@
   <nav>
     <a href="#" class="nav-logo">Ed Chandler</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#speaking">Speaking</a></li>
-      <li><a href="#advisory">Advisory</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section id="hero">
     <div class="hero-bg-lines"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span>Naval Aviator &nbsp;·&nbsp; Board Director &nbsp;·&nbsp; Leadership Advisor</span>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span>Naval Aviator &nbsp;·&nbsp; TOPGUN &nbsp;·&nbsp; Speaker</span>
+        </div>
+        <h1>Leading when the<br/><em>stakes are real.</em></h1>
+        <p class="hero-sub">
+          Thirty-two years flying, fighting, and building the people who run the Navy's toughest jobs — now on stage for rooms that want the cockpit view and a lesson that lands on the way out.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn-primary">Book Ed to speak &rarr;</a>
+          <a href="#speaking" class="btn-secondary">See the talks</a>
+        </div>
       </div>
-      <h1>Leading when the<br/><em>stakes are real.</em></h1>
-      <p class="hero-sub">
-        I help organisations build the leadership culture, decision architecture, and operational rhythm to perform under pressure — drawing on 20+ years flying fighters, leading teams in combat, and advising boards across three continents.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#contact" class="btn-primary">Let's Talk &rarr;</a>
-        <a href="#speaking" class="btn-secondary">Speaking Topics</a>
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <img src="images/ed-naples-xo.jpg" alt="CDR Ed Chandler as Executive Officer, Naval Support Activity Naples, Italy — flight suit with XO patches, Mount Vesuvius in the background" />
+        </div>
       </div>
     </div>
   </section>
 
   <div id="credentials">
-    <div class="cred-item"><span class="cred-dot"></span>F-14 / F/A-18 Naval Aviator</div>
     <div class="cred-item"><span class="cred-dot"></span>TOPGUN Graduate</div>
-    <div class="cred-item"><span class="cred-dot"></span>OIF Combat Veteran</div>
-    <div class="cred-item"><span class="cred-dot"></span>Corporate Board Director</div>
-    <div class="cred-item"><span class="cred-dot"></span>Defence &amp; Security Advisor</div>
+    <div class="cred-item"><span class="cred-dot"></span>NATO Carrier Strike Integration</div>
+    <div class="cred-item"><span class="cred-dot"></span>Air Boss, NAS Oceana</div>
+    <div class="cred-item"><span class="cred-dot"></span>XO, NSA Naples</div>
+    <div class="cred-item"><span class="cred-dot"></span>32 Years Commissioned Service</div>
     <div class="cred-item"><span class="cred-dot"></span>Lisbon, Portugal</div>
   </div>
 
-  <section id="about">
-    <div class="about-left">
-      <div class="section-label"><span>About</span></div>
-      <h2>Thirty years of<br/><em>high-stakes decisions.</em></h2>
-      <p class="about-text">I flew F-14s and F/A-18s off carrier decks, went to TOPGUN, briefed Admirals in combat, and led squadrons through the kind of complexity that doesn't forgive bad decisions. When I transitioned out of uniform, I brought that operating system with me.</p>
-      <p class="about-text">Today I work with executives, boards, and leadership teams who are navigating uncertainty, scaling fast, or trying to build organisations that perform when it matters most. My advisory practice is built on a proprietary leadership framework called DRIFT — and on the conviction that most organisations already have the talent they need; what they're missing is the operating architecture to unlock it.</p>
-      <p class="about-text">I sit on corporate boards, advise defence and security companies, and speak to audiences who want more than inspiration — they want a framework they can actually use.</p>
-    </div>
-    <div class="about-right">
-      <div class="stat-grid">
-        <div class="stat-block"><div class="stat-number">20+</div><div class="stat-label">Years leading in high-stakes environments</div></div>
-        <div class="stat-block"><div class="stat-number">3</div><div class="stat-label">Continents of board &amp; advisory experience</div></div>
-        <div class="stat-block"><div class="stat-number">F-14</div><div class="stat-label">Tomcat &amp; Hornet qualified naval aviator</div></div>
-        <div class="stat-block"><div class="stat-number">DRIFT</div><div class="stat-label">Proprietary leadership operating framework</div></div>
+  <section id="bio">
+    <div class="section-label"><span>About Ed</span></div>
+    <h2>Thirty-two years of<br/><em>high-stakes decisions.</em></h2>
+    <div class="bio-grid">
+      <div class="bio-copy">
+        <p class="bio-text">Ed is a TOPGUN-trained Naval Aviator who spent 32 years in uniform — combat tours, NATO carrier strike integration work adopted as MAOC policy, Air Boss at NAS Oceana, Executive Officer at NSA Naples.</p>
+        <p class="bio-text">He speaks about how institutions actually build the people who lead under pressure — and why the systems that produce a 29-year-old making the right call at 500 feet over the beach can be built into any organization that decides to stop hiring and hoping.</p>
+      </div>
+      <div class="bio-headshot">
+        <img src="images/ed-headshot.jpg" alt="Ed Chandler portrait" />
       </div>
     </div>
   </section>
 
   <section id="speaking">
     <div class="section-label"><span>Speaking</span></div>
-    <h2>Talks that leave<br/><em>something behind.</em></h2>
+    <h2>Three ways to<br/><em>bring Ed in.</em></h2>
     <div class="speaking-grid">
-      <div class="topic-card"><div class="topic-number">01</div><div class="topic-title">Deciding Under Fire</div><p class="topic-desc">How military aviation's decision frameworks translate directly to the boardroom — and why most organisations have the right people making decisions in the wrong architecture.</p></div>
-      <div class="topic-card"><div class="topic-number">02</div><div class="topic-title">The DRIFT Framework</div><p class="topic-desc">A practical leadership operating system built around Decisions, Rhythm &amp; Rituals, Intent, Feedback, and Talent — designed for leaders who need results, not concepts.</p></div>
-      <div class="topic-card"><div class="topic-number">03</div><div class="topic-title">Building Teams That Don't Break</div><p class="topic-desc">What carrier aviation teaches about trust, accountability, and the culture conditions that allow ordinary people to do extraordinary things under pressure.</p></div>
+      <div class="topic-card">
+        <div class="topic-number">01</div>
+        <div class="topic-title">Full Throttle</div>
+        <p class="topic-desc">An access talk from inside the fighter-pilot community — TOPGUN, combat, the carrier flight deck at night — closing on what it means to live a career Danger Close. Built for conferences, member clubs, and audiences that want the cockpit view and the lesson that lands on the way out.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-number">02</div>
+        <div class="topic-title">Leading to Scale</div>
+        <p class="topic-desc">The argument that organizations running nineteen-year-olds making life-or-death calls scale better than most businesses — and why. A systems-level talk on how deliberate leadership infrastructure beats charismatic leadership, every time, over a long enough horizon. Built for executive audiences, founder off-sites, and investor portfolio days.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-number">03</div>
+        <div class="topic-title">Bespoke engagement</div>
+        <p class="topic-desc">For programs that want something shaped to the room — a leadership team off-site, a board retreat, a closed-door session on a specific operating problem. Built in conversation with the host.</p>
+      </div>
     </div>
     <div class="speaking-note">
       <p>"Ed delivered a genuinely outstanding talk to the American Club of Lisbon — weaving together combat experience, strategic insight, and practical leadership frameworks in a way that stayed with the room long after the evening ended."</p>
-      <cite>— American Club of Lisbon, April 2026</cite>
+      <cite>— Patrick Siegler-Lathrop, President, American Club of Lisbon &nbsp;·&nbsp; Grémio Literário, April 2026</cite>
     </div>
   </section>
 
-  <section id="advisory">
-    <div>
-      <div class="section-label"><span>Advisory</span></div>
-      <h2>Where I can<br/><em>add the most value.</em></h2>
-      <ul class="advisory-list">
-        <li>Executive leadership coaching and team performance</li>
-        <li>Board advisory — governance, risk, and strategic direction</li>
-        <li>Defence, security, and dual-use technology ventures</li>
-        <li>Organisational design and operating model transformation</li>
-        <li>Leadership culture assessment and development</li>
-        <li>Crisis preparedness and decision architecture</li>
-      </ul>
-      <a href="#contact" class="btn-primary" style="margin-top:2.5rem; display:inline-flex;">Start a Conversation &rarr;</a>
-    </div>
-    <div>
-      <div class="drift-callout">
-        <div class="drift-title">DRIFT</div>
-        <div class="drift-expand">Decisions &nbsp;·&nbsp; Rhythm &amp; Rituals &nbsp;·&nbsp; Intent &nbsp;·&nbsp; Feedback &nbsp;·&nbsp; Talent</div>
-        <p class="drift-desc">DRIFT is a proprietary leadership operating framework developed from two decades of high-performance aviation, combat leadership, and corporate advisory work. It gives organisations a common language and a concrete set of practices to build the culture and decision-making capacity they need to scale without losing what makes them good.</p>
-        <a href="https://prifly.com" class="btn-secondary" style="margin-top:1.75rem; display:inline-flex; font-size:0.72rem;">Learn more at PriFly &rarr;</a>
+  <!--
+    Third image slot — drop a file at images/stage-or-archival.jpg and uncomment
+    the <img> line below to replace the placeholder. Recommended subjects, ranked:
+    1. Stage/podium photo from the ACL Apr 21 talk
+    2. Archival flight-deck or cockpit-era photo
+    3. Grémio Literário exterior/interior
+    4. Advisor/whiteboard/in-conversation shot
+    Aspect ratio target: 21:9 (landscape). Min width 1600px for retina.
+  -->
+  <section id="stage-photo">
+    <div class="stage-photo-frame">
+      <!-- <img src="images/stage-or-archival.jpg" alt="Ed Chandler speaking at the American Club of Lisbon, Grémio Literário, April 2026" /> -->
+      <div class="stage-photo-placeholder">
+        <strong>Photo slot</strong>
+        <small>Third image goes here — stage shot from the ACL talk, an archival flight-deck photo, or the Grémio Literário venue. 21:9 landscape, 1600px wide minimum. Replace images/stage-or-archival.jpg and uncomment the &lt;img&gt; tag in the HTML.</small>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="section-label" style="justify-content:center;"><span>Contact</span></div>
-    <h2>Ready to <em>talk?</em></h2>
-    <p class="contact-sub">Whether you're looking for a speaker, an advisor, or just want to explore whether there's a fit — reach out. I respond personally.</p>
-    <form class="contact-form" name="contact" netlify>
-      <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Jane Smith" required /></div>
-      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
-      <div class="form-group"><label for="interest">I'm interested in</label><select id="interest" name="interest"><option value="">Select one…</option><option value="speaking">Speaking engagement</option><option value="advisory">Advisory / consulting</option><option value="board">Board role</option><option value="other">Something else</option></select></div>
-      <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about what you have in mind…"></textarea></div>
-      <button type="submit" class="form-submit">Send Message</button>
+    <h2>Bring Ed <em>in.</em></h2>
+    <p class="contact-sub">Tell me a little about the event and I'll be in touch within a couple of days.</p>
+    <form class="contact-form" action="https://formspree.io/f/xeevpbnr" method="POST">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="event-type">Event type</label>
+        <select id="event-type" name="event_type">
+          <option value="">Select one…</option>
+          <option value="talk">Talk / keynote</option>
+          <option value="seminar">Executive seminar / off-site</option>
+          <option value="fireside">Fireside / panel</option>
+          <option value="bespoke">Bespoke engagement</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="event-date">Event date</label>
+        <input type="date" id="event-date" name="event_date" />
+      </div>
+      <div class="form-group">
+        <label for="message">Anything you'd like me to know</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message</button>
     </form>
-    <p class="contact-alt">Or reach me directly at <a href="mailto:ed@echandler.net">ed@echandler.net</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/edchandler" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p class="contact-alt">Or reach me directly at <a href="mailto:ed@edchandler.net">ed@edchandler.net</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/edchandler96/" target="_blank" rel="noopener">LinkedIn</a></p>
   </section>
 
   <footer>
     <div class="footer-name">Ed Chandler</div>
     <ul class="footer-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#speaking">Speaking</a></li>
-      <li><a href="#advisory">Advisory</a></li>
-      <li><a href="https://prifly.com">PriFly</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/edchandler96/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
     <div class="footer-copy">&copy; 2026 Ed Chandler. All rights reserved.</div>
   </footer>
