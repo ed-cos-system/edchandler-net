@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ed Chandler — Speaking</title>
-  <meta name="description" content="Ed Chandler — TOPGUN-trained Naval Aviator, 32 years in uniform. Talks and executive sessions on how institutions build the people who lead under pressure." />
+  <meta name="description" content="Ed Chandler — TOPGUN-trained Naval Aviator, 28 years in uniform. Leadership systems, not leadership philosophy. Speaker for executive audiences." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://edchandler.net/" />
   <meta property="og:title" content="Ed Chandler — Speaking" />
-  <meta property="og:description" content="Leadership lessons from 32 years flying, fighting, and building the people who run the Navy's toughest jobs." />
+  <meta property="og:description" content="Leadership systems, not leadership philosophy. TOPGUN graduate and combat-proven leader — now on stage for executive audiences." />
   <meta property="og:image" content="https://edchandler.net/images/ed-naples-xo.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ed Chandler — Speaking" />
-  <meta name="twitter:description" content="Leadership lessons from 32 years flying, fighting, and building the people who run the Navy's toughest jobs." />
+  <meta name="twitter:description" content="Leadership systems, not leadership philosophy. TOPGUN graduate and combat-proven leader — now on stage for executive audiences." />
   <meta name="twitter:image" content="https://edchandler.net/images/ed-naples-xo.jpg" />
 
   <link rel="canonical" href="https://edchandler.net/" />
@@ -194,7 +194,6 @@
       animation: fadeUp 0.8s ease 0.8s both;
     }
 
-    /* Hero image — the Naples XO shot */
     .hero-image-wrap {
       position: relative;
       opacity: 0;
@@ -218,7 +217,6 @@
       filter: saturate(0.92) contrast(1.02);
     }
 
-    /* Subtle gold corner accents */
     .hero-image-wrap::before,
     .hero-image-wrap::after {
       content: '';
@@ -309,6 +307,30 @@
       background: var(--gold);
       border-radius: 50%;
       flex-shrink: 0;
+    }
+
+    /* ---------- Qualification statement ---------- */
+    #qualification {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .qualification-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      color: var(--off-white);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .qualification-text em {
+      font-style: normal;
+      color: var(--gold);
     }
 
     /* ---------- Sections ---------- */
@@ -475,7 +497,7 @@
       font-style: normal;
     }
 
-    /* ---------- Stage photo (between speaking and contact) ---------- */
+    /* ---------- Stage photo ---------- */
     #stage-photo {
       padding: 0;
       background: var(--navy);
@@ -623,7 +645,6 @@
     }
 
     .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); letter-spacing: 0.08em; }
-
     .footer-links { display: flex; gap: 2rem; list-style: none; }
 
     .footer-links a {
@@ -656,6 +677,7 @@
       .nav-links a { font-size: 0.7rem; }
       #hero { padding: 7rem 1.5rem 3rem; }
       #credentials { padding: 1.25rem 1.5rem; gap: 1.25rem; }
+      #qualification { padding: 2rem 1.5rem; }
       section { padding: 4rem 1.5rem; }
       .speaking-grid { grid-template-columns: 1fr; }
       .stage-photo-frame { aspect-ratio: 4 / 3; }
@@ -666,6 +688,7 @@
       h1 { font-size: 2.5rem; }
       .hero-sub { font-size: 1rem; }
       .cred-item { font-size: 0.68rem; }
+      .qualification-text { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -684,11 +707,11 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-eyebrow">
-          <span>Naval Aviator &nbsp;·&nbsp; TOPGUN &nbsp;·&nbsp; Speaker</span>
+          <span>TOPGUN Graduate &nbsp;&middot;&nbsp; Naval Aviator &nbsp;&middot;&nbsp; Speaker</span>
         </div>
-        <h1>Leading when the<br/><em>stakes are real.</em></h1>
+        <h1>Leadership systems,<br/><em>not leadership philosophy.</em></h1>
         <p class="hero-sub">
-          Thirty-two years flying, fighting, and building the people who run the Navy's toughest jobs — now on stage for rooms that want the cockpit view and a lesson that lands on the way out.
+          Twenty-eight years in uniform — from the flight deck, to running some of the U.S. Navy's most complex organizations, to shaping NATO doctrine. Now working with executives and founders who want the actual machinery behind high-performance organizations, not another leadership deck.
         </p>
         <div class="hero-cta-group">
           <a href="#contact" class="btn-primary">Book Ed to speak &rarr;</a>
@@ -697,7 +720,7 @@
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-frame">
-          <img src="images/ed-naples-xo.jpg" alt="CDR Ed Chandler as Executive Officer, Naval Support Activity Naples, Italy — flight suit with XO patches, Mount Vesuvius in the background" />
+          <img src="images/ed-naples-xo.jpg" alt="Ed Chandler — Naval Aviator, TOPGUN graduate, speaker" />
         </div>
       </div>
     </div>
@@ -705,23 +728,26 @@
 
   <div id="credentials">
     <div class="cred-item"><span class="cred-dot"></span>TOPGUN Graduate</div>
-    <div class="cred-item"><span class="cred-dot"></span>NATO Carrier Strike Integration</div>
+    <div class="cred-item"><span class="cred-dot"></span>NATO Doctrine</div>
     <div class="cred-item"><span class="cred-dot"></span>Air Boss, NAS Oceana</div>
     <div class="cred-item"><span class="cred-dot"></span>XO, NSA Naples</div>
-    <div class="cred-item"><span class="cred-dot"></span>32 Years Commissioned Service</div>
+    <div class="cred-item"><span class="cred-dot"></span>28 Years Commissioned Service</div>
     <div class="cred-item"><span class="cred-dot"></span>Lisbon, Portugal</div>
+  </div>
+
+  <div id="qualification">
+    <p class="qualification-text">If your audience wants <em>leadership systems</em>, not leadership philosophy — this is for you.</p>
   </div>
 
   <section id="bio">
     <div class="section-label"><span>About Ed</span></div>
-    <h2>Thirty-two years of<br/><em>high-stakes decisions.</em></h2>
+    <h2>The stories <em>and the systems</em><br/>behind them.</h2>
     <div class="bio-grid">
       <div class="bio-copy">
-        <p class="bio-text">Ed is a TOPGUN-trained Naval Aviator who spent 32 years in uniform — combat tours, NATO carrier strike integration work adopted as MAOC policy, Air Boss at NAS Oceana, Executive Officer at NSA Naples.</p>
-        <p class="bio-text">He speaks about how institutions actually build the people who lead under pressure — and why the systems that produce a 29-year-old making the right call at 500 feet over the beach can be built into any organization that decides to stop hiring and hoping.</p>
+        <p class="bio-text">Ed Chandler accumulated nearly 3,000 flight hours and achieved more than 500 carrier arrested landings in four strike fighter aircraft. A TOPGUN graduate and combat-proven leader, he instructed and trained the best tactical thinkers and leaders in the world at the Navy's premier Air Warfare Development Command. With nearly 30 years of experience inside high-stakes teams and organizations, doing the hard work of leading difficult organizational change from within — he brings the stories and the systems behind them to your stage.</p>
       </div>
       <div class="bio-headshot">
-        <img src="images/ed-headshot.jpg" alt="Ed Chandler portrait" />
+        <img src="images/ed-headshot.jpg" alt="Ed Chandler" />
       </div>
     </div>
   </section>
@@ -747,26 +773,17 @@
       </div>
     </div>
     <div class="speaking-note">
-      <p>"Ed delivered a genuinely outstanding talk to the American Club of Lisbon — weaving together combat experience, strategic insight, and practical leadership frameworks in a way that stayed with the room long after the evening ended."</p>
-      <cite>— Patrick Siegler-Lathrop, President, American Club of Lisbon &nbsp;·&nbsp; Grémio Literário, April 2026</cite>
+      <p>"Ed was terrific — the audience loved it and we're still getting enthusiastic feedback."</p>
+      <cite>— Patrick Siegler-Lathrop, President, American Club of Lisbon &nbsp;&middot;&nbsp; Gr&eacute;mio Liter&aacute;rio, April 2026</cite>
     </div>
   </section>
 
-  <!--
-    Third image slot — drop a file at images/stage-or-archival.jpg and uncomment
-    the <img> line below to replace the placeholder. Recommended subjects, ranked:
-    1. Stage/podium photo from the ACL Apr 21 talk
-    2. Archival flight-deck or cockpit-era photo
-    3. Grémio Literário exterior/interior
-    4. Advisor/whiteboard/in-conversation shot
-    Aspect ratio target: 21:9 (landscape). Min width 1600px for retina.
-  -->
   <section id="stage-photo">
     <div class="stage-photo-frame">
       <!-- <img src="images/stage-or-archival.jpg" alt="Ed Chandler speaking at the American Club of Lisbon, Grémio Literário, April 2026" /> -->
       <div class="stage-photo-placeholder">
         <strong>Photo slot</strong>
-        <small>Third image goes here — stage shot from the ACL talk, an archival flight-deck photo, or the Grémio Literário venue. 21:9 landscape, 1600px wide minimum. Replace images/stage-or-archival.jpg and uncomment the &lt;img&gt; tag in the HTML.</small>
+        <small>Stage shot from the ACL talk, an archival flight-deck photo, or the Grémio Literário venue. 21:9 landscape, 1600px wide minimum.</small>
       </div>
     </div>
   </section>
@@ -787,7 +804,7 @@
       <div class="form-group">
         <label for="event-type">Event type</label>
         <select id="event-type" name="event_type">
-          <option value="">Select one…</option>
+          <option value="">Select one&hellip;</option>
           <option value="talk">Talk / keynote</option>
           <option value="seminar">Executive seminar / off-site</option>
           <option value="fireside">Fireside / panel</option>
@@ -805,7 +822,7 @@
       </div>
       <button type="submit" class="form-submit">Send message</button>
     </form>
-    <p class="contact-alt">Or reach me directly at <a href="mailto:ed@edchandler.net">ed@edchandler.net</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/edchandler96/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p class="contact-alt">Or reach me directly at <a href="mailto:ed@edchandler.net">ed@edchandler.net</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/edchandler96/" target="_blank" rel="noopener">LinkedIn</a></p>
   </section>
 
   <footer>
